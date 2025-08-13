@@ -2,6 +2,8 @@ import express from 'express';
 const app = express();
 const PORT = 4000;
 
+
+app.get("/", (req, res) => res.send("Hello World!"));
 app.post('/subscribe', async (req, res) => {
   const { firstName, lastName, email, phone } = req.body;
 
@@ -10,10 +12,10 @@ app.post('/subscribe', async (req, res) => {
   }
 
   try {
-    const acRes = await fetch(`${process.env.AC_API_URL}/api/3/contacts`, {
+    const acRes = await fetch('https://loginsohmnia.api-us1.com/api/3/contacts', {
       method: 'POST' ,
       headers: {
-        'Api-Token': process.env.AC_API_KEY,
+        'Api-Token': "c500d78f17c77387b9c3d8762d93a5ab3121cb736f9b133b7d18f262f5caf44a26ffd344",
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
