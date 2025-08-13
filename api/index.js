@@ -11,7 +11,7 @@ app.post('/subscribe', async (req, res) => {
 
   try {
     const acRes = await fetch(`${process.env.AC_API_URL}/api/3/contacts`, {
-      method: 'POST',
+      method: 'POST' ,
       headers: {
         'Api-Token': process.env.AC_API_KEY,
         'Content-Type': 'application/json',
